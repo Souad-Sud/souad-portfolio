@@ -1,0 +1,113 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.main {
+    // background-color: red;
+    margin-top: 200px;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+     background-color: $body-bg-color;
+
+    @include responsive-main {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    &__imageProfil-container {
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        margin: 0;
+    }
+    
+    &__title {
+        // background-color: $navbar-color;
+        color: $title-color;
+        font-family: $font_limelight;
+        font-size: 6.8rem;
+        text-transform: uppercase;
+        font-weight: bold;
+        writing-mode: vertical-rl;  
+        transform: rotate(180deg);
+        margin-right: -55px;
+         @include responsive-tablet {
+            display: none;
+         }
+    }
+    &__imag-profil {
+        border-bottom: 10px solid rgb(253, 253, 253); 
+        height: auto;
+        width: auto;
+        @include responsive-tablet {
+            width: 100%;
+            height: auto;
+            border-radius: 700px;
+         }
+        
+    }
+
+    &__description {
+        // background-color: cadetblue;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+         @include responsive-tablet {
+            align-items: center;
+            text-align: center;
+            padding: 2px 0 2px 0;
+         }
+    }
+    &__subtitle {
+        font-family: $font_cooki;
+        font-style: normal;
+        color: #F99DC2;
+        font-weight: lighter;
+        font-size: 3.1rem;
+        font-style: italic;
+        letter-spacing: 1;
+    }
+    &__icon-container {
+        display: flex;
+        gap: 10px;
+    }
+}
+.scrollDown {
+  background-color: transparent;
+  height: 100px;
+  width: 40px;
+  border: 0.2px solid whitesmoke;
+  border-radius: 40px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;    
+  align-items: flex-start; 
+  box-shadow: 0 4px 10px rgba(249, 247, 247, 0.581);  
+  margin-left: auto; 
+  margin-right: 90px;
+  position: relative;
+        @include respond-between($breakpoint-small, $breakpoint-medium) {
+            display: none;
+       }
+    
+.circle {
+  height: 21px;
+  width: 21px;
+  border-radius: 50%;
+  background-color: white;
+  margin-top: 4px;
+  text-align: center;
+  line-height: 21px;
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.moved {
+ 
+  transform: translateY(50px);
+  background-color: $icon-bg-color;
+}
+}

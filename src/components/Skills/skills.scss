@@ -1,0 +1,30 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.skills {
+    margin: 200px 100px 40px 100px;
+        @include respond-between($breakpoint-small, $breakpoint-medium) {
+            margin: 0;
+        }
+
+    color: whitesmoke;
+    &__subtitle {
+        font-family:$font_cooki;
+        color:$navbar-color;
+        letter-spacing: 1px;
+        font-size: 3.1rem;
+        font-style: italic;
+        font-weight: lighter;
+        padding-bottom: 10px;
+            @include respond-between($breakpoint-small, $breakpoint-medium) {
+               margin: 50px 0 30px 0;
+               text-align: center;
+               padding: 0;
+               font-size: 2.2rem;
+               
+        }
+
+    }
+ 
+}
+ 

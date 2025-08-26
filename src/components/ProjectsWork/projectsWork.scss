@@ -1,0 +1,41 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.projectCard {
+   border: 1px solid rgba(233, 226, 226, 0.633);
+   width: 300px;
+   color: whitesmoke;
+   
+   
+   &__image {
+      
+   }
+   &__descriptionBlog {
+   background-image:url("/images/background-img.jpg");
+    padding: 10px;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+   &__title {
+    font-family: $font_cooki;
+    color: $navbar-color;
+    font-weight: normal;
+    font-size: 2.3rem;
+    padding: 6px 0;
+   }
+   &__description {
+    padding: 10px 0;
+   }
+   &__link {
+    font-family: $font_meow;
+    background-color: $navbar-color;
+    padding: 7px;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    font-size: 1.9rem;
+    margin: 20px 0;
+   }
+}

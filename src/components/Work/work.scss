@@ -1,0 +1,150 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.workProjects {
+  margin: 0;
+  padding: 0;
+    &__presentation{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &__title {
+      font-family: $font_cooki;
+      font-size: 3.1rem;
+      color: $navbar-color;
+      padding: 0 0 20px 0;
+    }
+    &__description {
+      color: whitesmoke;
+      margin: 5px 0 60px 0;
+      font-size: 1.4rem;
+       @include respond-between($breakpoint-small, $breakpoint-medium) {
+          margin: 0;
+          padding: 0 0 10px 0;
+          font-size: 1.2rem;
+       }
+    }
+    &__imgsContainer {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: row;
+      @include respond-between($breakpoint-small, $breakpoint-medium) {
+          margin: 0;
+          padding: 0;
+          flex-direction: column;
+       }
+    }
+    &__imgComtainer {
+      height: 300px;
+      width: 500px;
+      overflow: hidden;
+
+      @include respond-between($breakpoint-small, $breakpoint-medium) {
+           height: auto;
+           width: 100%;
+       }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; 
+          display: block;
+            @include respond-between($breakpoint-small, $breakpoint-medium) {
+              width: 100%;
+              height: auto;
+              object-fit: contain;
+            }
+        }
+    }
+    &__btncontainer{
+      margin: 60px 0;
+      text-align: center;
+    }
+    &__btn {
+      background-color: transparent;
+      color: $navbar-color;
+      font-family: $font_cooki;
+      padding: 8px 30px;
+      border: 1px solid $navbar-color ;
+      border-radius: 20px;
+      font-size: 2.3rem;
+      cursor: pointer;
+        &:hover {
+          background-color: $navbar-color;
+          color: rgb(169, 130, 130);
+     }   
+   }
+}
+
+ 
+
+
+// .work-item {
+//   padding: 1rem;
+//   border-radius: 8px;
+//   color: white;
+//   text-align: center;
+
+//   &.bg-red {
+//     background-color: #e74c3c;
+//   }
+
+//   &.bg-purple {
+//     background-color: #8e44ad;
+//   }
+
+//   &.bg-blue {
+//     background-color: #3498db;
+//   }
+
+//   &.bg-yellow {
+//     background-color: #f1c40f;
+//     color: black;
+//   }
+
+//   &.bg-green {
+//     background-color: #2ecc71;
+//   }
+
+//   &.bg-pink {
+//     background-color: #fd79a8;
+//   }
+// }
+
+// .workProjects {
+
+//   &__imgsContainer {
+//     background-color: red;
+//     display: flex;
+//     flex-direction: row;
+//     flex-wrap: wrap;
+//     margin: 200px 100px;
+//     gap: 30px;
+//     justify-content: center;
+//     align-items: center;
+  
+//     &__imgComtainer {
+//       height: auto;
+//       padding: 30px 0;
+//       width: 650px;
+//       display: flex; /* center the image horizontally & vertically */
+//       justify-content: center;
+//       align-items: center;
+//       overflow: hidden; /* prevent overflow if needed */
+  
+//       img {
+//         max-width: 100%;
+//         max-height: 100%;
+//         object-fit: contain; /* makes sure the whole image is visible */
+//       }
+//     }
+//   }
+
+// }
+
+

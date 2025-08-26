@@ -1,0 +1,30 @@
+@import "../styles/variables";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  background-color: $main-bg-color;
+}
+html,
+body {
+  max-width: 100vw;
+  height: 100vh;
+ 
+}
+body {
+  font-family: $font_radley;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1.3rem;
+  background-color: $body-bg-color;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 30px;
+}
+.homePage {
+   background-color: $body-bg-color;
+}

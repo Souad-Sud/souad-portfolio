@@ -1,0 +1,28 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin responsive-tablet {
+    @media screen and (max-width: $breakpoint-tablet) {
+        //A media query that applies styles when the screen is at least $breakpoint-tablet wide
+        @content;
+    }
+}
+@mixin responsive-to-small {
+   @media screen and (max-width: $breakpoint-mobile) {
+        @content;
+    }
+}
+
+@mixin responsive-main {
+   @media screen and (max-width: $breakpoint-responsiv) {
+        @content;
+    }
+}
+
+//In order to use it for ressponsive
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max) {
+    @content;
+  }
+}

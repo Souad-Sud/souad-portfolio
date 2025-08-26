@@ -1,0 +1,29 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.footer {
+    background-color: $title-color;
+    margin: 0;
+    padding: 0;
+    margin-top: 100px;
+    &__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    h2 {
+        color: #F99DC2;
+    }
+    hr {
+        color: black;
+        margin: 0 300px;
+    }
+    p {
+        text-align: center;
+        font-family: $font_radley;
+        margin: 20px 0;
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}

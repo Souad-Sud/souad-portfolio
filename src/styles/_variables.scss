@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Radley:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Meow+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+
+//Font
+$font_radley: "Radley", serif;
+$font_meow:"Meow Script", "cursive";
+$font_cooki:"Cookie", cursive;
+$font_limelight:"Limelight", sans-serif;
+
+//Colors
+$body-bg-color: #27282A;
+$main-bg-color: #34353A;
+$navbar-color: #F99DC2;
+$title-color: #9C0240;
+$icon-bg-color: #9C0240;
+
+//Breakpoints:
+$breakpoint-tablet: 768px;
+$breakpoint-responsiv: 830px;
+$breakpoint-mobile: 400px;
+
+$breakpoint-small: 300px;
+$breakpoint-medium: 800px;
+

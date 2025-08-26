@@ -1,0 +1,14 @@
+@import "../../styles/variables";
+@import "../../styles/mixins";
+
+.socialMedia{
+    gap: 16px;
+    display: flex;
+    margin: 5px 0;
+    &__link {
+
+         border-radius: 15px;
+         font-size: 12rem;
+         background-color: $navbar-color;
+    }
+}
