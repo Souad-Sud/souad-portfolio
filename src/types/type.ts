@@ -3,6 +3,11 @@ export type NavLink = {
   path: string;
 };
 
+export type FooterNav = {
+  name: string;
+  path: string;
+}
+
 export type IconList = {
   image: string;
   name: string

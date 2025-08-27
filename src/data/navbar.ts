@@ -1,4 +1,4 @@
-import { NavLink} from "@/types/type";
+import { NavLink, FooterNav} from "@/types/type";
 
 
 export const navLinks: NavLink[] = [
@@ -6,5 +6,15 @@ export const navLinks: NavLink[] = [
   { name: "Projects", path: "/projects" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
-  { name: "Project", path: "/project" }
+ 
 ];
+
+
+export const footerNavLinks: FooterNav[]  = [
+ 
+  { name: "Projects", path: "/projects" },  
+  { name: "Resume", path: "/Resume" }
+];
+
+
+ 

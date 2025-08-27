@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import NavigationBar from "../NavigationBar";
 import SocialMedia from "../SocialMedia";
 import './footer.scss'
+import FooterNavigation from "../FooterNavigation";
 
 const Footer = () :ReactElement => {
     return(
@@ -11,7 +12,7 @@ const Footer = () :ReactElement => {
             <div className="footer__container">
            <Logo />
            <h2>Portfolio</h2>
-           <NavigationBar />
+           <FooterNavigation />
            <div>
            <SocialMedia />
            </div>
