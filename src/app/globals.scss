@@ -1,4 +1,5 @@
-@import "../styles/variables";
+@use  "../styles/variables" as vars ;
+@use "../styles/mixins" as mixins;
 
 * {
   box-sizing: border-box;
@@ -6,7 +7,7 @@
   margin: 0;
 }
 html {
-  background-color: $main-bg-color;
+  background-color: vars.$main-bg-color;
 }
 html,
 body {
@@ -15,16 +16,53 @@ body {
  
 }
 body {
-  font-family: $font_radley;
+  font-family: vars.$font_radley;
   font-style: normal;
   font-weight: 500;
   font-size: 1.3rem;
-  background-color: $body-bg-color;
+  background-color: vars.$body-bg-color;
   display: flex;
   flex-direction: column;
   height: 100%;
   margin: 30px;
+   @include mixins.responsive-tablet {
+    margin: 0;
+    padding: 0;
+   }
 }
 .homePage {
-   background-color: $body-bg-color;
+   background-color: vars.$body-bg-color;
+}
+
+.app__splash {
+  cursor:pointer;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url('/images/bg-image.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 100;
+  transition: transform 1s ease, opacity 1s ease;
+
+  &.exit {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  // button {
+  //   padding: 12px 24px;
+  //   border: none;
+  //   font-size: 30px;
+  //   border-radius: 8px;
+  //   background: #fff;
+  //   color: #000;
+  //   font-weight: bold;
+  //   cursor: pointer;
+  //   margin-top: 20px;
+  // }
 }

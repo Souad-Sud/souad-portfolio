@@ -1,4 +1,25 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as mixins;
+
+
 .footerNavigation{
     margin: 0;
     padding: 0;
+    &__container {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        gap: 30px;
+    }
+    &__listItems {
+        
+        list-style: none;
+       a {
+         text-decoration: none;
+         color: vars.$navbar-color;
+         font-size: 1.7rem;
+         font-weight: bold;
+       }
+    }
 }

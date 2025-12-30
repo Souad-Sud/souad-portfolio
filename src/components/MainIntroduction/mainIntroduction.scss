@@ -1,66 +1,138 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as mixins;
 
 .main {
-    // background-color: red;
-    margin-top: 200px;
+    margin-top: 100px;
     display: flex;
     justify-content: center;
     color: whitesmoke;
-     background-color: $body-bg-color;
-
-    @include responsive-main {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-    &__imageProfil-container {
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-    }
-    
-    &__title {
-        // background-color: $navbar-color;
-        color: $title-color;
-        font-family: $font_limelight;
-        font-size: 6.8rem;
-        text-transform: uppercase;
-        font-weight: bold;
-        writing-mode: vertical-rl;  
-        transform: rotate(180deg);
-        margin-right: -55px;
-         @include responsive-tablet {
-            display: none;
-         }
-    }
-    &__imag-profil {
-        border-bottom: 10px solid rgb(253, 253, 253); 
-        height: auto;
-        width: auto;
-        @include responsive-tablet {
-            width: 100%;
-            height: auto;
-            border-radius: 700px;
-         }
-        
-    }
-
-    &__description {
-        // background-color: cadetblue;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 20px;
-         @include responsive-tablet {
-            align-items: center;
+    gap: 20px;
+    background-color: vars.$body-bg-color;
+        img {
+            max-width: 100%;
+            height: 100%;
+            display: block;
+            
+        }
+        @include mixins.responsive-main {
+            display: flex;
+            flex-direction: column;
             text-align: center;
-            padding: 2px 0 2px 0;
+        }
+        &__imageProfil-container {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;       
+        }
+        &__title {
+            color: vars.$title-color;
+            font-family: vars.$font_limelight;
+            font-size: 6rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            writing-mode: vertical-rl;  
+            transform: rotate(180deg);;
+            text-decoration: underline;
+            @include mixins.responsive-tablet {
+                display: none;
+            }
+        }
+        &__flipcontainer{
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 2 / 3;
+            perspective: 1000px;
+            margin: auto;
+        }
+        &__flippimg {
+            position: relative;
+            width: 100%;
+            padding: 10px;
+            object-fit: cover;
+            box-sizing: border-box;
+            inset: 0;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;                 
          }
-    }
+        &__profilimg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            padding: 10px;
+            object-fit: cover;
+                  @include mixins.responsive-tablet {
+               position: relative;
+               inset: auto;
+               width: auto;
+               margin: 0 auto;
+               align-items: center;
+               height: auto;
+               padding: 0;
+             }
+            @include mixins.responsive-to-small{
+                width: 300px;
+            }
+            
+        }
+    // &__profilimg.front {
+    //     z-index: 2;
+    // }
+        &__profilimg.back {
+            transform: rotateY(180deg);
+               @include mixins.responsive-tablet {
+                display: none;
+             }
+        }
+        &__flipcontainer {
+        width: 400px;
+        height: 600px;
+        perspective: 1000px;
+            &:hover {
+                    .main__flippimg {
+                        transform: rotateY(180deg);
+                    }
+            }
+        }
+        &__flippimg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+                @include mixins.responsive-tablet {
+                transform: none !important;
+             }
+            
+        }
+        &__description {
+            color: whitesmoke;
+            font-size: 1.3rem;
+            font-family: vars.$font_radley;
+            padding: 10px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+            @include mixins.responsive-tablet {
+                align-items: center;
+                text-align: center;
+                padding: 2px 0 2px 0;
+            }
+        }
+        &__subtitlename {
+            font-family: vars.$font_cooki;
+            color: #F99DC2;
+            font-weight: bold;
+            font-size: 3.2rem;
+            letter-spacing: 1;
+        }
     &__subtitle {
-        font-family: $font_cooki;
+        font-family: vars.$font_cooki;
         font-style: normal;
         color: #F99DC2;
         font-weight: lighter;
@@ -73,6 +145,7 @@
         gap: 10px;
     }
 }
+
 .scrollDown {
   background-color: transparent;
   height: 100px;
@@ -89,10 +162,7 @@
   margin-left: auto; 
   margin-right: 90px;
   position: relative;
-        @include respond-between($breakpoint-small, $breakpoint-medium) {
-            display: none;
-       }
-    
+
 .circle {
   height: 21px;
   width: 21px;
@@ -108,6 +178,6 @@
 .moved {
  
   transform: translateY(50px);
-  background-color: $icon-bg-color;
+  background-color: vars.$icon-bg-color;
 }
 }

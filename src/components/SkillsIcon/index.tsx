@@ -1,11 +1,14 @@
 "use client";
-import { ReactElement } from "react";
 import Image from "next/image";
 import { iconItems } from "@/data/iconItem";
 import "./skillsIcon.scss";
-import Work from "../Work";
 
-const SkillsIcon = (): ReactElement => {
+type SkillsIconProps = {
+  onClick: () => void;
+  isMoved: boolean;
+};
+
+const SkillsIcon = ({ onClick, isMoved }: SkillsIconProps) => {
   return (
     <div className="skillsIcon">
       {iconItems.map((item, index) => (
@@ -22,6 +25,7 @@ const SkillsIcon = (): ReactElement => {
           </div>
         </div>
       ))}
+
       <p className="skillsIcon__descr">
         What excites me most about Frontend Development is the perfect mix of
         creativity and logic—designing interfaces that not only look great but
@@ -32,7 +36,10 @@ const SkillsIcon = (): ReactElement => {
         project I work on is an opportunity to learn, experiment, and create
         something meaningful.
       </p>
-      <Work />
+
+      <span className="scrollDown" onClick={onClick}>
+        <p className={isMoved ? "circle moved" : "circle"}>↓</p>
+      </span>
     </div>
   );
 };

@@ -1,21 +1,23 @@
+@use "./variables" as vars;
+
 @mixin flex {
   display: flex;
 }
 
 @mixin responsive-tablet {
-    @media screen and (max-width: $breakpoint-tablet) {
+    @media screen and (max-width: vars.$breakpoint-tablet) {
         //A media query that applies styles when the screen is at least $breakpoint-tablet wide
         @content;
     }
 }
 @mixin responsive-to-small {
-   @media screen and (max-width: $breakpoint-mobile) {
+   @media screen and (max-width: vars.$breakpoint-mobile) {
         @content;
     }
 }
 
 @mixin responsive-main {
-   @media screen and (max-width: $breakpoint-responsiv) {
+   @media screen and (max-width: vars.$breakpoint-responsiv) {
         @content;
     }
 }
@@ -26,3 +28,5 @@
     @content;
   }
 }
+
+

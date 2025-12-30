@@ -20,8 +20,13 @@ export type ProjectsItems = {
   link: string;
 }
 
-export type workItems = {
+export type WorkItems = {
   image: string,
   title: string,
   bgColor: string
+}
+
+export type WorkpresentationRType = {
+  image: string,
+  link: string
 }

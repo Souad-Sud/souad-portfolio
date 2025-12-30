@@ -1,5 +1,5 @@
-@import "../../styles/variables";
-@import "../../styles/mixins";
+@use  "../../styles/variables" as vars;
+@use  "../../styles/mixins" as mixins;
 
 .socialMedia{
     gap: 16px;
@@ -9,6 +9,6 @@
 
          border-radius: 15px;
          font-size: 12rem;
-         background-color: $navbar-color;
+         background-color: vars.$navbar-color;
     }
 }

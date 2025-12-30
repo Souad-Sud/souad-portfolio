@@ -2,16 +2,17 @@
 import { ReactElement } from "react";
 import Image from "next/image";
 import "./projectsWork.scss"
+import Link from "next/link";
 
 const ProjectsWork = (): ReactElement => {
   return (
     <div className="projectCard">
       <div className="projectCard__imageContainer">
         <Image
-          src="/projectImages/zooProject.jpeg"
+          src="/projectImages/bloodmaiden.jpeg"
           alt=" "
-          height={300}
-          width={300}
+          height={700}
+          width={850}
           className="projectCard__image"
           priority
         />
@@ -22,7 +23,7 @@ const ProjectsWork = (): ReactElement => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem iusto
           sed rerum labore mollitia voluptate aspernatur .
         </p>
-        <button className="projectCard__link">Discover</button>
+        <Link href="https://blood-maiden.vercel.app/" className="projectCard__link" target="_blank">Discover</Link>
       </div>
     </div>
   );
