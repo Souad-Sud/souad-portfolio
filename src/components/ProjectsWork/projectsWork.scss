@@ -6,6 +6,7 @@
    display: flex;
    flex-direction: column;
    gap: 30px;
+   padding: 20px;
          @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
             margin: 100px 0 0 0;
             padding: 0;
@@ -14,8 +15,6 @@
             width: auto;
          }
 
-   // background-color: vars.$main-bg-color;
-   padding: 20px;
    &__title {
       margin-bottom: 3px;
       font-family: vars.$font_limelight;
