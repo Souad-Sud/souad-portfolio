@@ -1,11 +1,12 @@
 'use client'
 import { ReactElement } from "react"
+import AboutMe from "@/components/AboutMe"
 
-const About = ():ReactElement => {
+const AboutPage = ():ReactElement => {
     return(
         <div>
-            About
+            <AboutMe />
         </div>
     )
 }
-export default About;
+export default AboutPage;

@@ -8,7 +8,7 @@ const FooterNavigation = () => {
       <ul className="footerNavigation__container">
         {footerNavLinks.map((linkItem) => (
           <li key={linkItem.path} className="footerNavigation__listItems">
-            <Link href={linkItem.path}>{linkItem.name}</Link>
+            <Link href={linkItem.path} target="_blank">{linkItem.name}</Link>
           </li>
         ))}
       </ul>

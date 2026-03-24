@@ -1,7 +1,6 @@
 "use client";
 import { workPresentation } from "@/data/work";
 import "./work.scss";
-// import { useRouter } from 'next/router';
 import Link from "next/link";
 
 const Work = () => {
@@ -11,23 +10,78 @@ const Work = () => {
         <h2 className="workProjects__title">My Work</h2>
         <p className="workProjects__description">
           Here are a few projects I have worked on. Click on the link to
-          discover more
+          discover more.
         </p>
       </div>
-
-      <div className="workProjects__imgsContainer">
-        {workPresentation.map((link) => (
-          <div className="workProjects__imgComtainer" key={link.image}>
-            <Link href={link.link} target="_blank" >
-              <img src={link.image} alt="project img"  />
+      <div className="workProjects__workcontainer">
+        <section className="workProjects__worksection">
+          <div>
+            <h2 className="workProjects__subtitle">Project 1</h2>
+            <p className="workProjects__description">
+              Blood maiden is a game website uncover the filthy secrets of a
+              twisted version of Victorian London ....
+            </p>
+          </div>
+          <div className="workProjects__workcontent">
+            <h2 className="workProjects__subt">
+              Materials sourcing and curation
+            </h2>
+            <div className="workProjects__imagecontainer">
+              <img src="/projectImages/project1.png" alt="" />
+            </div>
+          </div>
+          <div className="workProjects__arrowWrapper">
+            <Link href="/projects" className="workProjects__arrowLink">
+              <button>→</button>
             </Link>
           </div>
-        ))}
-      </div>
-      <div className="workProjects__btncontainer">
-        <Link href="/projects">
-          <button className="workProjects__btn">Discover more</button>
-        </Link>
+        </section>
+
+        <section className="workProjects__worksection">
+          <div>
+            <h2 className="workProjects__subtitle">Project 2</h2>
+            <p className="workProjects__description">
+              Recipe App is a project focused on fetching data from a recipe
+              API.....
+            </p>
+          </div>
+          <div className="workProjects__workcontent">
+            <h2 className="workProjects__subt">
+              Materials sourcing and curation
+            </h2>
+            <div className="workProjects__imagecontainer">
+              <img src="/projectImages/project2.jpeg" alt="" />
+            </div>
+          </div>
+          <div className="workProjects__arrowWrapper">
+            <Link href="/projects" className="workProjects__arrowLink">
+              <button>→</button>
+            </Link>
+          </div>
+        </section>
+        <section className="workProjects__worksection">
+          <div>
+            <h2 className="workProjects__subtitle">Project 3</h2>
+            <p className="workProjects__description">
+              This website is about a game called Thral, a forgotten ghost of a
+              fallen tyrant, awakened by a failed ritual beneath ancient
+              ruins...
+            </p>
+          </div>
+          <div className="workProjects__workcontent">
+            <h2 className="workProjects__subt">
+              Materials sourcing and curation
+            </h2>
+            <div className="workProjects__imagecontainer">
+              <img src="/projectImages/project3.png" alt="" />
+            </div>
+          </div>
+          <div className="workProjects__arrowWrapper">
+            <Link href="/projects" className="workProjects__arrowLink">
+              <button>→</button>
+            </Link>
+          </div>
+        </section>
       </div>
     </div>
   );

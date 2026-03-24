@@ -18,7 +18,7 @@ const Footer = () :ReactElement => {
            </div>
             </div>
            <hr />
-           <p>© 2025 Portfolio by Souad. All right reserved</p>
+           <p>© 2026 Portfolio by Souad. All rights reserved.</p>
         </div>
     )
 }

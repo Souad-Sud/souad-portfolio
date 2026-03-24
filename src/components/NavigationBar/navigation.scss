@@ -6,6 +6,7 @@
   margin: 0;
   position: relative;
   width: 100%;
+
   &__list {
     display: flex;
     list-style: none;
@@ -14,19 +15,19 @@
 
     @include mixins.responsive-tablet {
       flex-direction: column;
-      align-items: center;          // Center items horizontally in column mode
+      align-items: center;
       background-color: vars.$body-bg-color;
       position: absolute;
       top: 75px;
       left: 40%;
       transform: translateX(-50%);
       width: 300px;
-      max-width: 90vw;               // Responsive max width for smaller screens
+      max-width: 90vw;
       margin: 0;
       overflow: hidden;
       max-height: 0;
       opacity: 0;
-      z-index: 1;
+      z-index: 1000;
       transition: max-height 0.5s ease, opacity 0.9s ease, padding 0.7s ease;
     }
   }
@@ -37,10 +38,13 @@
   }
 
   &__links {
-    text-decoration: none;
-    color: vars.$navbar-color;
+    display: inline-block; // REQUIRED for transform
     position: relative;
+    text-decoration: none;
     color: #f99dc2;
+
+    transform-origin: left;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 
     &::after {
       content: '';
@@ -53,13 +57,21 @@
       transition: width 0.3s ease-in-out;
     }
 
-    &:hover::after {
-      width: 100%;
+    // Hover effect (desktop only)
+    @media (hover: hover) {
+      &:hover {
+        transform: scale(0.9);
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
     }
 
     &--active {
       font-weight: bold;
       color: #f6cfdf;
+      transform: none;
     }
   }
 

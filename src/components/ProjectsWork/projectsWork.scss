@@ -2,51 +2,106 @@
 @use "../../styles/mixins" as mixins;
 
 .projectCard {
-   color: whitesmoke;
-   margin: 100px 0;
+   color: white;
    display: flex;
-   justify-content: center;
-   gap: 16px;
+   flex-direction: column;
+   gap: 30px;
+         @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+            margin: 100px 0 0 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            width: auto;
+         }
 
-   &__imageContainer {
-      margin: 0;
-      padding: 0;
-   }
-   &__image {
-      border-radius: 80px;
-
-   }
-   
-   &__descriptionBlog {
-    padding: 10px;  
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-   }
+   // background-color: vars.$main-bg-color;
+   padding: 20px;
    &__title {
-    font-family: vars.$font_cooki;
-    color: $navbar-color;
-    font-weight: normal;
-    font-size: 2.3rem;
-    padding: 6px 0;
+      margin-bottom: 3px;
+      font-family: vars.$font_limelight;
+      text-align: center;
+         @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+            font-size: 1.6rem;
+            margin-top: 0;
+         }
+
    }
-   &__description {
-    padding: 10px 0;
+   &__imageContainers {
+      margin-top: 30px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+         @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+           display: none;
+         }
+     
+   }   
+         &__image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            object-fit: contain;
+            flex: 1 1 300px;
+         }  
+}
+
+.projectContent {
+   color: whitesmoke;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin-top: 100px;
+      @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+       padding: 0;
+       display: flex;
+       flex-direction: column;
+       justify-content: center;
+
+      }
+   &__title {
+      color: whitesmoke;
+      margin-bottom: 3px;
+      padding: 10px 0 10px 10px;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      font-family: vars.$font_limelight;
+   }
+   &__projectContentContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      grid-area: 20px;
+      justify-content: space-between;
+         @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+         display: flex;
+         flex-direction: column;
+         width: auto;
+         }
+   }
+   &__imageContainer {
+      width: 100%;
+      max-width: 420px;    
+      height: auto;
+      aspect-ratio: 420 / 500;  
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+      }
+   }
+   &__descriptionContainer {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 16px;
+      margin: 0 0 0 20px;
    }
    &__link {
-      align-self: flex-start;
-      width: auto;
-      font-family: vars.$font_meow;
-      background-color: vars.$navbar-color;
-      padding: 7px;
-      padding: 10px 30px;
-      border-radius: 30px;
-      font-weight: bold;
-      border: none;
-      font-size: 2rem;
-      margin: 20px 0;
-      text-decoration: none;
-      color: black;
+      color: vars.$navbar-color;
    }
+   
+
 }

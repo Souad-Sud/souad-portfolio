@@ -9,7 +9,11 @@ const SocialMedia = () => {
   return (
     <div className="socialMedia">
       <div>
-        <Link href="https://github.com/Souad-Sud" target="_blank">
+        <Link
+          href="https://github.com/Souad-Sud"
+          target="_blank"
+          className="socialMedia__github"
+        >
           <Image
             src="/images/glogo.jpg"
             alt="logo"
@@ -22,8 +26,9 @@ const SocialMedia = () => {
       </div>
       <div>
         <Link
-          href="https://www.linkedin.com/in/souad-rondelet-b18873184/"
+          href="https://www.linkedin.com/in/souad-taki-b18873184/"
           target="_blank"
+           className="socialMedia__linkedin"
         >
           <Image
             src="/images/LinkdLogo.png"
@@ -31,7 +36,7 @@ const SocialMedia = () => {
             height={35}
             width={35}
             priority
-             className="socialMedia__link"
+            className="socialMedia__linkk"
           />
         </Link>
       </div>

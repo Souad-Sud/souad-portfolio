@@ -1,0 +1,20 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/variables' as vars;
+.sidebarPage {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+          @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            gap: 5px;
+            
+          }
+
+    &__projectWork{
+        flex: 1;
+        padding: 50px;
+    }
+}

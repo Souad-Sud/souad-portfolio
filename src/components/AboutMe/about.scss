@@ -1,0 +1,210 @@
+@use "../../styles/variables" as vars;
+@use "../../styles/mixins" as mixins;
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.aboutPage {
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   grid-template-rows: auto auto;
+   margin: 100px 0 0 0;
+   grid-template-areas:
+  "sectionone sectiontree"
+  "sectiontwo sectiontree"
+  "sectionfour sectiontree"
+  "sectionfive sectiontree"
+  "sectionsix sectiontree";
+      @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+          display: flex;
+          flex-direction: column;
+       }
+    &__section {
+        flex: 1;
+        height: auto;
+        color: vars.$whiteSmoke;
+    }
+
+    &__section.sectionOne {
+        background-color: vars.$main-bg-color;
+        color: whitesmoke;  
+        grid-area: sectionone; 
+     
+    }
+    &__section.sectiontwo {
+        grid-area: sectiontwo;
+    }
+
+     &__section.sectionfour {
+        grid-area: sectionfour;
+     }
+      &__section.sectionfive {
+        grid-area: sectionfive;
+      }
+       &__section.sectionsix {
+        grid-area: sectionsix;
+      }
+    &__section.sectiontree{
+    
+        // background-color: #4a0822;
+        background-color: rgba(193, 191, 191, 0.74);
+        grid-area: sectiontree;
+        position: sticky;
+        top: 100px; // same as your page top margin
+        align-self: start; 
+        animation: fadeUp 1s ease-out forwards;
+         @include mixins.respond-between(vars.$breakpoint-tablet, vars.$breakpoint-medi) {
+          margin: 0;
+          padding: 0;
+        }
+            @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+       display: none;
+        }
+
+  
+    }
+
+    &__section.sectionTwo {
+        background-color: vars.$navbar-color;
+        display: flex;
+        align-items: center;
+        
+    }
+    &__sectiontwocontainer {
+        border-radius: 20px;
+        width: 50%;
+        height: 40%;
+        padding: 50px 0 0 0;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        gap: 26px;
+        margin: 100px auto;
+        align-items: center;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+           @include mixins.respond-between(vars.$breakpoint-tablet, vars.$breakpoint-medi) {
+         padding: 20px;
+         margin: 20px auto;
+        }
+    }
+    &__sectioncontainer {
+        padding: 200px 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        justify-content: center;
+
+        p{
+          opacity: 0;
+          transform: translateX(-80px);
+          transition: all 0.8s ease-out;
+        }
+        p.show {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+    &__title {
+        font-family: vars.$font_limelight;
+        font-size: 2.4rem;
+        text-align: center;
+        margin: 0 0 40px 0 ;
+    }
+
+    &__buttons {
+        margin: 20px;
+        
+    }
+    &__resumebutton {
+        border: 1px solid whitesmoke;
+        padding: 8px 29px;
+        margin: 0 20px 0 0;
+        border-radius: 7px;
+        text-decoration: none;
+        background-color: #f3b2cc;
+        font-size: 1.2rem;
+        color: #f10563;
+        font-weight: bold;
+              &:hover {
+            color: whitesmoke;
+        }
+    }
+     &__projectbutton {
+        padding: 8px 29px;
+        border-radius: 7px;
+        text-decoration: none;
+        color: whitesmoke;
+        background-color: #f10563;
+        font-size: 1.2rem;
+        font-weight: bold;
+        &:hover {          
+            color: black;
+        }
+    }
+    &__image {
+        background-image: url("/profilImage/profile-image.png");
+        background-size: cover;
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        background-repeat: no-repeat;
+        border-radius: 300px;
+        background-color: #f8eff2;
+        border: 1px solid rgb(225, 207, 207);
+           @include mixins.respond-between(vars.$breakpoint-tablet, vars.$breakpoint-medi) {
+           display: none;
+        }
+    }
+    &__subtitle {
+        font-family: vars.$font_limelight;
+        text-decoration: underline;
+        color: #f10563;
+        padding: 5px;
+         
+    }
+    &__socialmediaabout {
+        background-color: whitesmoke;
+        margin-top: auto;  
+        width: 100%;
+        background-color: whitesmoke;
+        padding: 16px;
+       display: flex;
+       justify-content: center;
+    }
+
+
+    &__section.sectiontree,
+     &__section.sectionsix
+    &__section.sectionfive {
+    opacity: 0;
+    transform: translateX(60px);
+
+    animation: fadeInRight 0.9s ease-out forwards;
+    animation-timeline: view();
+    animation-range: entry 30% cover 40%;
+  }
+
+
+}

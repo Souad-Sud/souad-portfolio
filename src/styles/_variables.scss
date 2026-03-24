@@ -15,13 +15,29 @@ $main-bg-color: #34353A;
 $navbar-color: #F99DC2;
 $title-color: #9C0240;
 $icon-bg-color: #9C0240;
+$whiteSmoke: whitesmoke;
+$whiteColor: white;
+$animationBtn: #ee0261;
+$hoverAnimationColor: #f99dc2;
+
+
+// block colors
+// _variables.scss
+
+$colors: (
+  #ac57797e,  
+  #452e39db,  
+  #62385d,  
+  #87647dce,  
+  #54174bad   
+);
+
 
 //Breakpoints:
+$breakpoint-small: 300px;
 $breakpoint-tablet: 768px;
 $breakpoint-responsiv: 830px;
 $breakpoint-mobile: 400px;
-
-$breakpoint-small: 300px;
 $breakpoint-medium: 800px;
 $breakpoint-medi: 1000px;
 

@@ -11,9 +11,9 @@ export const work:WorkItems[] = [
 ];
 
 export const workPresentation:WorkpresentationRType[] = [
-  { image: "/projectImages/bloodmaiden.jpeg", link: "https://blood-maiden.vercel.app/"},
-  { image: "/projectImages/recip.jpeg", link: "https://my-recipe-five.vercel.app/"},
-  { image: "/projectImages/thral.jpeg", link: "https://thrall-gp3.vercel.app/"},
+  { image: "/projectImages/bloodmaiden.jpeg", link: "https://blood-maiden.vercel.app/", size: "medium"},
+  { image: "/projectImages/project-recipe.jpeg", link: "https://my-recipe-five.vercel.app/", size: "large"},
+  { image: "/projectImages/thral.jpeg", link: "https://thrall-gp3.vercel.app/", size:"medium"},
   // { image: "/projectImages/api.jpeg", link: "/projects"},
   // { image: "/projectImages/memorygame.jpeg", link: "/projects"},
   // { image: "/projectImages/harrypoter.jpeg", link: "/projects"},

@@ -1,8 +1,11 @@
 "use client";
+import { MapPinSimple } from "@phosphor-icons/react";
 import { ReactElement, useState } from "react";
 import Image from "next/image";
 import "./mainIntroduction.scss";
 import SocialMedia from "../SocialMedia";
+import CirculeAnimation from "../CirculeAnimation";
+import { MapPinSimpleArea } from "@phosphor-icons/react/dist/ssr";
 
 type Props = {
   scrollToSkills: () => void;
@@ -23,32 +26,21 @@ const MainIntroduction = ({ scrollToSkills }: Props): ReactElement => {
       <main className="main">
         <div className="main__imageProfil-container">
           <h1 className="main__title">Portfolio</h1>
-          <div className="main__flipcontainer">
-            <div className="main__flippimg">
-              <Image
-                src="/profilImage/profile-image.png"
-                alt="profile-image"
-                height={600}
-                width={500}
-                className="main__profilimg front"
-              />
-              <Image
-                src="/profilImage/profile-image-fliped.png"
-                alt="profile-image"
-                height={600}
-                width={500}
-                className="main__profilimg back"
-              />
-            </div>
-          </div>
         </div>
         <div className="main__description">
-          <h2 className="main__subtitlename">Souad</h2>
-          <h2 className="main__subtitle">---- Front-end developer</h2>
+          <CirculeAnimation />
+          <h2 className="main__subtitlename">Souad Taki</h2>
+          <h2 className="main__subtitle">--- Front-End Developer ---</h2>
+
           <p className="main__introduction">
-            Hello, my name is Souad Taki. I’m a passionate front-end developer
-            and designer based in Sweden.
+            I design and develop modern, responsive web applications with a
+            strong focus on user experience, performance, and clean code.I
+            combine creativity and technical expertise to bring ideas to life.
           </p>
+          <span className="main__span">
+            {" "}
+            <MapPinSimpleArea size={32} color="pink" /> in Sweden
+          </span>
           <SocialMedia />
         </div>
       </main>

@@ -2,13 +2,10 @@
 
 import { useRef, useState, useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
-
 import MainIntroduction from "@/components/MainIntroduction";
-import Skills from "@/components/Skills";
-import SkillsIcon from "@/components/SkillsIcon";
 import Work from "@/components/Work";
-
 import "./globals.scss";
+import NewSkills from "@/components/NewSkills";
 
 export default function Home() {
   const router = useRouter();
@@ -45,18 +42,11 @@ export default function Home() {
   return (
     <div className="app">
       <main className="homePage">
-        {/* Pass scroll handler to intro */}
         <MainIntroduction scrollToSkills={scrollToSkills} />
-
         {/* Skills section with ref */}
         <div ref={skillsRef}>
-          <Skills sectionRef={skillsRef} />
+          <NewSkills />
         </div>
-
-        {/* Arrow to scroll to Work */}
-        <SkillsIcon onClick={scrollToWork} isMoved={isMoved} />
-
-        {/* Work section */}
         <div ref={workRef}>
           <Work />
         </div>

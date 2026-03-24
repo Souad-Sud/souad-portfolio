@@ -2,11 +2,17 @@
 @use "../../styles/mixins" as mixins;
 
 .main {
-    margin-top: 100px;
+    margin: 100px 200px 0 200px;
     display: flex;
     justify-content: center;
     color: whitesmoke;
     gap: 20px;
+        @include mixins.respond-between(vars.$breakpoint-tablet, vars.$breakpoint-medi) {
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        padding: 0;
+        }
     background-color: vars.$body-bg-color;
         img {
             max-width: 100%;
@@ -14,11 +20,10 @@
             display: block;
             
         }
-        @include mixins.responsive-main {
-            display: flex;
-            flex-direction: column;
-            text-align: center;
-        }
+            @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
+            margin: 0;
+            padding: 0;
+            }
         &__imageProfil-container {
             display: flex;
             justify-content: center;
@@ -139,6 +144,13 @@
         font-size: 3.1rem;
         font-style: italic;
         letter-spacing: 1;
+    }
+    &__span {
+        padding: 0;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        gap: 15px;
     }
     &__icon-container {
         display: flex;

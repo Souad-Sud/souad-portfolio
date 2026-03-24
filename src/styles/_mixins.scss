@@ -4,6 +4,11 @@
   display: flex;
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin responsive-tablet {
     @media screen and (max-width: vars.$breakpoint-tablet) {
         //A media query that applies styles when the screen is at least $breakpoint-tablet wide
