@@ -23,5 +23,12 @@ export const projects: Project[] = [
        "This website is about a game called Thral, a forgotten ghost of a fallen tyrant, awakened by a failed ritual beneath ancient ruins. To reclaim your power and uncover the truth of your downfall, you must possess the living and piece together your past through stolen memories.",
     link: "https://thrall-jfpd0sz9f-tobisakjernells-projects.vercel.app/",
   },
+  {
+    id: 4,
+    image: "/projectImages/context-app.jpeg",
+    title: "Recipe Finder with Authentication",
+    description: "Developed a recipe application using nextJs Context API and a REST API. Users can authenticate, browse recipes by category, save recipes to their profile, remove saved recipes, and securely log out.",
+    link: "https://context-recipe-app.vercel.app/profile",
+  }
   
 ];
