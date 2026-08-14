@@ -29,6 +29,13 @@ export const projects: Project[] = [
     title: "Recipe Finder with Authentication",
     description: "Developed a recipe application using nextJs Context API and a REST API. Users can authenticate, browse recipes by category, save recipes to their profile, remove saved recipes, and securely log out.",
     link: "https://context-recipe-app.vercel.app/profile",
+  },
+    {
+    id: 5,
+    image: "/projectImages/crud-project.jpeg",
+    title: "Recipe Finder with Authentication",
+    description: "Developed a full-stack CRUD application using Next.js, TypeScript, shadcn/ui, Drizzle ORM, and Neon PostgreSQL. Users can create, edit, and delete records containing a username and email, with all data stored securely in the database.",
+    link: "https://crud-project-ochre-eta.vercel.app/",
   }
   
 ];

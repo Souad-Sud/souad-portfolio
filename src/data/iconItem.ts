@@ -57,6 +57,11 @@ export const iconItems:IconList[] = [
       name: "Tailwind",
       image: "/images/Tailwind.png",
       text:"Tailwind CSS is a utility-first CSS framework used to style websites directly in your HTML or JSX using predefined classes."
+    },
+    {
+      name: "DB2 IBM",
+      image: "/images/db2.png",
+      text:"DB2 is a family of data management products, including database servers, developed by IBM."
     }
     
   ];
