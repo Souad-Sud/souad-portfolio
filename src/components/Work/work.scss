@@ -258,6 +258,11 @@
       height: 300px;
     }
   }
+  &__viewLink {
+    color: whitesmoke;
+    font-size: bold;
+    text-decoration: none;
+  }
 
   &__imageOverlay {
     position: absolute;

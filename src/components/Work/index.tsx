@@ -2,8 +2,7 @@
 
 import "./work.scss";
 import Link from "next/link";
-import {projectsPresentation} from "@/data/projectpresentation";
- 
+import { projectsPresentation } from "@/data/projectpresentation";
 
 const Work = () => {
   return (
@@ -40,7 +39,13 @@ const Work = () => {
               <img src={project.image} alt={project.subtitle} />
 
               <div className="workProjects__imageOverlay">
-                <span>VIEW PROJECT</span>
+                <Link
+                  href="projects"
+                  className="workProjects__viewLink"
+                  aria-label={`View ${project.title}`}
+                >
+                  VIEW PROJECT
+                </Link>
               </div>
             </div>
 
