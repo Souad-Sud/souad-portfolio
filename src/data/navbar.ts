@@ -6,7 +6,7 @@ export const navLinks: NavLink[] = [
   { name: "Projects", path: "/projects" },
   { name: "About", path: "/about" },
   { name: "Contact", path: "/contact" },
-  { name: "Resume", path: "/Resume-frontenddeveloper-SouadTaki.pdf", external: true },
+  { name: "Resume", path: "/Souad-aplication-CV.pdf", external: true },
 
  
 ]

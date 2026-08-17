@@ -1,14 +1,13 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import MainIntroduction from "@/components/MainIntroduction";
 import Work from "@/components/Work";
 import "./globals.scss";
 import NewSkills from "@/components/NewSkills";
 
 export default function Home() {
-  const router = useRouter();
   const pathname = usePathname();
 
   // Refs for scroll targets

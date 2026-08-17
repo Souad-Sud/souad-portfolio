@@ -33,6 +33,7 @@ export type Project = {
   image: string;
   title: string
   description: string;
+   challengesAndLessons: string;
   link: string;
 };
 
@@ -40,4 +41,12 @@ export type Project = {
 
 export interface ProjectWorks {
   images: string[];
+}
+
+export interface ProjectPresentation {
+  id: number;
+  title: string;
+  subtitle: string;
+  description: string;
+  image: string;
 }

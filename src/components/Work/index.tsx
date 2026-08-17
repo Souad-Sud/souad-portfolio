@@ -1,89 +1,69 @@
 "use client";
-import { workPresentation } from "@/data/work";
+
 import "./work.scss";
 import Link from "next/link";
+import {projectsPresentation} from "@/data/projectpresentation";
+ 
 
 const Work = () => {
   return (
-    <div className="workProjects">
+    <section className="workProjects">
       <div className="workProjects__presentation">
+        <span className="workProjects__eyebrow">MY PROJECTS</span>
+
         <h2 className="workProjects__title">My Work</h2>
+
         <p className="workProjects__description">
-          Here are a few projects I have worked on. Click on the link to
+          Here are a few projects I have worked on. Explore each project to
           discover more.
         </p>
       </div>
-      <div className="workProjects__workcontainer">
-        <section className="workProjects__worksection">
-          <div>
-            <h2 className="workProjects__subtitle">Project 1</h2>
-            <p className="workProjects__description">
-              Blood maiden is a game website uncover the filthy secrets of a
-              twisted version of Victorian London ....
-            </p>
-          </div>
-          <div className="workProjects__workcontent">
-            <h2 className="workProjects__subt">
-              Materials sourcing and curation
-            </h2>
-            <div className="workProjects__imagecontainer">
-              <img src="/projectImages/project1.png" alt="" />
-            </div>
-          </div>
-          <div className="workProjects__arrowWrapper">
-            <Link href="/projects" className="workProjects__arrowLink">
-              <button>→</button>
-            </Link>
-          </div>
-        </section>
 
-        <section className="workProjects__worksection">
-          <div>
-            <h2 className="workProjects__subtitle">Project 2</h2>
-            <p className="workProjects__description">
-              Recipe App is a project focused on fetching data from a recipe
-              API.....
-            </p>
-          </div>
-          <div className="workProjects__workcontent">
-            <h2 className="workProjects__subt">
-              Materials sourcing and curation
-            </h2>
-            <div className="workProjects__imagecontainer">
-              <img src="/projectImages/project2.jpeg" alt="" />
+      <div className="workProjects__workcontainer">
+        {projectsPresentation.map((project, index) => (
+          <article
+            className="workProjects__worksection"
+            key={project.id}
+            style={{
+              animationDelay: `${index * 0.15}s`,
+            }}
+          >
+            <div className="workProjects__number">0{project.id}</div>
+
+            <div className="workProjects__top">
+              <h2 className="workProjects__subtitle">{project.title}</h2>
+
+              <span className="workProjects__line" />
             </div>
-          </div>
-          <div className="workProjects__arrowWrapper">
-            <Link href="/projects" className="workProjects__arrowLink">
-              <button>→</button>
-            </Link>
-          </div>
-        </section>
-        <section className="workProjects__worksection">
-          <div>
-            <h2 className="workProjects__subtitle">Project 3</h2>
-            <p className="workProjects__description">
-              This website is about a game called Thral, a forgotten ghost of a
-              fallen tyrant, awakened by a failed ritual beneath ancient
-              ruins...
-            </p>
-          </div>
-          <div className="workProjects__workcontent">
-            <h2 className="workProjects__subt">
-              Materials sourcing and curation
-            </h2>
+
             <div className="workProjects__imagecontainer">
-              <img src="/projectImages/project3.png" alt="" />
+              <img src={project.image} alt={project.subtitle} />
+
+              <div className="workProjects__imageOverlay">
+                <span>VIEW PROJECT</span>
+              </div>
             </div>
-          </div>
-          <div className="workProjects__arrowWrapper">
-            <Link href="/projects" className="workProjects__arrowLink">
-              <button>→</button>
-            </Link>
-          </div>
-        </section>
+
+            <div className="workProjects__content">
+              <h3 className="workProjects__subt">{project.subtitle}</h3>
+
+              <p className="workProjects__projectDescription">
+                {project.description}
+              </p>
+
+              <Link
+                href="/projects"
+                className="workProjects__arrowLink"
+                aria-label={`View ${project.title}`}
+              >
+                <span>Explore</span>
+                <span className="workProjects__arrow">→</span>
+              </Link>
+            </div>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

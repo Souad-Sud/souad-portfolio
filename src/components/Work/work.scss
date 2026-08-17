@@ -2,207 +2,373 @@
 @use "../../styles/mixins" as mixins;
 
 .workProjects {
-  margin: 300px 0;
-  padding: 0;
+  margin: 250px 0 150px;
+  padding: 0 60px;
+  overflow: hidden;
 
   &__presentation {
     @include mixins.flex-column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    margin-bottom: 80px;
+  }
+
+  &__eyebrow {
+    color: #f99dc2;
+    font-size: 0.8rem;
+    letter-spacing: 5px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    opacity: 0.8;
   }
 
   &__title {
     font-family: vars.$font_cooki;
-    font-size: 3.1rem;
+    font-size: 4.5rem;
     color: vars.$navbar-color;
-    padding-bottom: 20px;
-    text-align: center;
+    margin: 0 0 20px;
+    position: relative;
 
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      margin: 0;
-      padding: 0 0 20px 0;
+    &::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 3px;
+      margin: 15px auto 0;
+      background: #f99dc2;
+      transition: width 0.5s ease;
+    }
+
+    &:hover::after {
+      width: 150px;
+    }
+
+    @include mixins.respond-between(
+      vars.$breakpoint-small,
+      vars.$breakpoint-responsiv
+    ) {
+      font-size: 3rem;
     }
   }
 
   &__description {
     color: vars.$whiteSmoke;
-    margin-bottom: 60px;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+    max-width: 650px;
+    line-height: 1.7;
+    margin: 0 auto;
 
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      padding: 5px;
-      text-align: center;
+    @include mixins.respond-between(
+      vars.$breakpoint-small,
+      vars.$breakpoint-responsiv
+    ) {
+      font-size: 1rem;
+      padding: 0 10px;
     }
   }
 
-  &__workcontainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 25px;
-    padding: 40px 0;
-
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      @include mixins.flex-column;
-      align-items: center;
-      padding: 5px;
-      margin: 0;
-      width: auto;
-    }
-
-    @include mixins.respond-between(vars.$breakpoint-medium, vars.$breakpoint-medi) {
-      @include mixins.flex-column;
-      align-items: center;
-    }
+ &__workcontainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1500px;
+    margin: 0 auto;
   }
+
 
   &__worksection {
     position: relative;
-    width: 500px;
-    padding: 20px;
-    @include mixins.flex-column;
-    gap: 16px;
-
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      margin: 0;
-      padding: 0;
-      width: auto;
-    }
+    min-height: 650px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 25px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(60px);
+    animation: projectAppear 0.8s ease forwards;
+    transition:
+      transform 0.5s ease,
+      border-color 0.5s ease,
+      box-shadow 0.5s ease,
+      background-color 0.5s ease;
 
     &::before {
+      content: "";
+      position: absolute;
+      width: 250px;
+      height: 250px;
+      top: -150px;
+      right: -150px;
+      background: #f99dc2;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    &::after {
       content: "";
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
-      height: 4px;
+      width: 0;
+      height: 3px;
       background: linear-gradient(
-        to right,
+        90deg,
+        #f99dc2,
         #ee0261,
-        rgba(249, 157, 194, 0.4),
         transparent
       );
-      border-top-left-radius: 20px;
-    }
-  }
 
-  &__subtitle {
-    padding: 5px 0 10px 0;
-    color: vars.$whiteColor;
-    text-align: center;
-  }
-
-  &__workcontent {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    gap: 20px;
-
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
-  }
-
-  &__subt {
-    margin: 0;
-    padding: 0;
-    color: vars.$whiteColor;
-    font-size: 1.2rem;
-  }
-  &__imagecontainer {
-    position: relative;
-    height: 380px;
-    width: 180px;
-    flex-shrink: 0;
-    overflow: hidden;
-    border-radius: 20px;
-    transition: all 0.5s ease;
-
-    img {
-      height: 100%;
-      width: 100%;
-      object-fit: cover; 
-      display: block;
-      border-radius: 20px;
-      transition: transform 0.5s ease;
-    }
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(
-        120deg,
-        transparent 30%,
-        rgba(0, 255, 255, 0.6),
-        rgba(255, 0, 255, 0.4),
-        transparent 70%
-      );
-      transform: rotate(-45deg);
-      transition: all 0.8s ease;
-      opacity: 0;
-      z-index: 2;
-      pointer-events: none;
+      transition: width 0.6s ease;
     }
 
     &:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 30px rgba(215, 246, 246, 0.6);
-    }
+      transform: translateY(-15px);
+      border-color: rgba(249, 157, 194, 0.5);
+      background: rgba(255, 255, 255, 0.045);
+      box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(249, 157, 194, 0.12);
 
-    &:hover img {
-      transform: scale(1.1);
-    }
+      &::before {
+        opacity: 0.15;
+        transform: scale(1.4);
+      }
 
-    &:hover::before {
-      opacity: 1;
-      transform: rotate(-45deg) translateY(100%);
-    }
-  }
+      &::after {
+        width: 100%;
+      }
 
-  &__arrowWrapper {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
+      .workProjects__number {
+        color: #f99dc2;
+        transform: translateX(5px);
+      }
 
-    @include mixins.respond-between(vars.$breakpoint-small, vars.$breakpoint-responsiv) {
-      justify-content: flex-start;
-      padding: 5px 0 20px 10px;
-    }
-  }
+      .workProjects__line {
+        width: 100%;
+      }
 
-  &__arrowLink {
-    color: vars.$whiteColor;
-    text-decoration: none;
-    font-size: 3rem;
-    font-weight: bold;
-    transition: transform 0.3s ease;
+      .workProjects__imagecontainer {
+        transform: translateY(-5px);
+      }
 
-    button {
-      cursor: pointer;
-      background-color: transparent;
-      padding: 2px 30px;
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: vars.$whiteColor;
-      border-left: vars.$animationBtn 5px solid;
+      .workProjects__imagecontainer img {
+        transform: scale(1.12);
+      }
 
-      &:hover {
-        color: vars.$body-bg-color;
-        background-color: vars.$whiteSmoke;
-        font-size: 1.6rem;
+      .workProjects__imageOverlay {
+        opacity: 1;
+      }
+
+      .workProjects__arrow {
+        transform: translateX(10px);
+      }
+
+      .workProjects__arrowLink {
+        color: #f99dc2;
       }
     }
 
-    &:hover {
-      transform: translateX(10px);
+    @include mixins.respond-between(
+      vars.$breakpoint-small,
+      vars.$breakpoint-responsiv
+    ) {
+      min-height: auto;
+      width: 100%;
+      padding: 20px;
     }
+
+    @include mixins.respond-between(
+      vars.$breakpoint-medium,
+      vars.$breakpoint-medi
+    ) {
+      min-height: auto;
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 3rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.08);
+    transition:
+      color 0.4s ease,
+      transform 0.4s ease;
+  }
+
+  &__top {
+    position: relative;
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    color: vars.$whiteColor;
+    font-size: 1.3rem;
+    margin: 0 0 10px;
+  }
+
+  &__line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #f99dc2;
+    transition: width 0.5s ease;
+  }
+
+  &__imagecontainer {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+       background: rgba(0, 0, 0, 0.2);
+    transition:
+      transform 0.5s ease,
+      box-shadow 0.5s ease;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit:contain;
+      transition:
+        transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1),
+        filter 0.5s ease;
+    }
+
+    @include mixins.respond-between(
+      vars.$breakpoint-small,
+      vars.$breakpoint-responsiv
+    ) {
+      height: 300px;
+    }
+  }
+
+  &__imageOverlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+
+    span {
+      padding: 12px 25px;
+      border: 1px solid rgba(255, 255, 255, 0.7);
+      border-radius: 30px;
+      color: white;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      transform: translateY(15px);
+      transition: transform 0.5s ease;
+    }
+  }
+
+  &__worksection:hover &__imageOverlay span {
+    transform: translateY(0);
+  }
+
+
+  &__content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  &__subt {
+    margin: 0 0 10px;
+    color: vars.$whiteColor;
+    font-size: 1.5rem;
+
+  }
+
+  &__projectDescription {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+    flex: 1;
+  }
+
+  &__arrowLink {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 25px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: vars.$whiteColor;
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition:
+      color 0.3s ease,
+      border-color 0.3s ease;
+
+    &:hover {
+      border-color: rgba(249, 157, 194, 0.4);
+    }
+  }
+
+  &__arrow {
+    font-size: 2rem;
+
+    transition: transform 0.4s ease;
+  }
+
+  @include mixins.respond-between(
+    vars.$breakpoint-medium,
+    vars.$breakpoint-medi
+  ) {
+    &__workcontainer {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @include mixins.respond-between(
+    vars.$breakpoint-small,
+    vars.$breakpoint-responsiv
+  ) {
+    margin: 150px 0 80px;
+    padding: 0 20px;
+
+    &__workcontainer {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+  }
+}
+
+@keyframes projectAppear {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
