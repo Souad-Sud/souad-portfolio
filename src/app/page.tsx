@@ -6,6 +6,7 @@ import MainIntroduction from "@/components/MainIntroduction";
 import Work from "@/components/Work";
 import "./globals.scss";
 import NewSkills from "@/components/NewSkills";
+import VeloraProject from "@/components/VeloraProject";
 
 export default function Home() {
   const pathname = usePathname();
@@ -49,6 +50,7 @@ export default function Home() {
         <div ref={workRef}>
           <Work />
         </div>
+        <VeloraProject />
       </main>
     </div>
   );
